@@ -18,7 +18,7 @@ export function HeroSection() {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-chirp-orange/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 pb-32 flex flex-col items-center justify-center min-h-screen">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 pb-24 sm:pb-32 flex flex-col items-center justify-center min-h-screen">
         <div className="w-full flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -27,7 +27,7 @@ export function HeroSection() {
             className="w-full flex flex-col items-center"
           >
             {/* Title */}
-            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold text-gradient-amber mb-6">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold text-gradient-amber mb-3 sm:mb-6">
               CHIRP
             </h1>
 
@@ -36,7 +36,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl sm:text-2xl md:text-3xl text-chirp-text-secondary mb-4"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-chirp-text-secondary mb-2 sm:mb-4"
             >
               The African Ceiling Bird
             </motion.p>
@@ -45,7 +45,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-lg sm:text-xl text-chirp-text-tertiary mb-12"
+              className="text-base sm:text-lg md:text-xl text-chirp-text-tertiary mb-6 sm:mb-12"
             >
               Since 1619
             </motion.p>
@@ -55,7 +55,7 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-xl sm:text-2xl text-chirp-text-primary font-display mb-12 max-w-3xl mx-auto w-full"
+              className="text-lg sm:text-xl md:text-2xl text-chirp-text-primary font-display mb-6 sm:mb-12 max-w-3xl mx-auto w-full"
             >
               Virtually Invisible. Unmistakably Present.
             </motion.p>
@@ -65,7 +65,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
-              className="mb-8 w-full max-w-4xl mx-auto"
+              className="mb-6 sm:mb-8 w-full max-w-4xl mx-auto"
             >
               <ContractAddress address={CONTRACT_ADDRESS} />
             </motion.div>

@@ -35,7 +35,7 @@ export function ContractAddress({
         </span>
       )}
 
-      <div className="glass-effect-strong rounded-lg p-4 flex items-center justify-between gap-3 glow-border-amber">
+      <div className="glass-effect-strong rounded-lg p-3 sm:p-4 flex items-center justify-between gap-2 sm:gap-3 glow-border-amber">
         <code className="font-mono text-sm md:text-base text-chirp-amber flex-1 overflow-hidden">
           {truncateOnMobile && !isExpanded ? (
             <>

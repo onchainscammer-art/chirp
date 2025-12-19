@@ -12,9 +12,9 @@ const images = [
     caption: "The African Ceiling Bird camouflaged in a domestic setting",
   },
   {
-    src: "/images/IMG_0310.jpg",
-    alt: "Close-up of African Ceiling Bird",
-    caption: "A rare close-up revealing the bird's distinctive features",
+    src: "/images/smoke-detectors.png",
+    alt: "Multiple African Ceiling Birds in their natural habitat",
+    caption: "A rare sighting of multiple ceiling birds roosting together",
   },
   {
     src: "/images/IMG_20251217_193525_035.jpg",

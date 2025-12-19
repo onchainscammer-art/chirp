@@ -13,6 +13,18 @@ export function VideoSection() {
     setGlobalVideoLoading(videoLoading);
   }, [videoLoading, setGlobalVideoLoading]);
 
+  // Set a timeout to handle cases where video never loads
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (videoLoading) {
+        setVideoError(true);
+        setVideoLoading(false);
+      }
+    }, 3000); // 3 second timeout
+
+    return () => clearTimeout(timeout);
+  }, [videoLoading]);
+
   const handlePlay = () => {
     setGlobalVideoPlaying(true);
   };

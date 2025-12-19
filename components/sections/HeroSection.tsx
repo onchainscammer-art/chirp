@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Twitter } from "lucide-react";
+import { Twitter, Instagram } from "lucide-react";
 import { ContractAddress } from "@/components/ui/ContractAddress";
 
 const CONTRACT_ADDRESS = "4kZNuqg2hJLDs7DJwRGAeWmZGL1aHhG1dngwqugwpump";
 const TWITTER_URL = "https://x.com/chirp_sol";
+const INSTAGRAM_URL = "https://www.instagram.com/chirp_sol";
 
 export function HeroSection() {
   return (
@@ -77,7 +78,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex items-center justify-center gap-4 w-full"
+            className="flex flex-col items-center justify-center gap-4 w-full"
           >
             <a
               href={TWITTER_URL}
@@ -87,6 +88,16 @@ export function HeroSection() {
               style={{ color: '#000000' }}
             >
               <Twitter className="w-5 h-5" />
+              <span>Follow @chirp_sol</span>
+            </a>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-chirp-amber to-chirp-yellow hover:from-chirp-yellow hover:to-chirp-amber transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+              style={{ color: '#000000' }}
+            >
+              <Instagram className="w-5 h-5" />
               <span>Follow @chirp_sol</span>
             </a>
           </motion.div>

@@ -19,12 +19,12 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 pb-24 sm:pb-32 flex flex-col items-center justify-center min-h-screen">
-        <div className="w-full flex flex-col items-center text-center">
+        <div className="w-full flex flex-col items-center text-center gap-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full flex flex-col items-center"
+            className="w-full flex flex-col items-center gap-6"
           >
             {/* Title */}
             <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold text-gradient-amber mb-3 sm:mb-6">
@@ -61,21 +61,22 @@ export function HeroSection() {
             </motion.p>
 
             {/* Contract Address */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-              className="mb-40 sm:mb-32 w-full max-w-4xl mx-auto"
-            >
-              <ContractAddress address={CONTRACT_ADDRESS} />
-            </motion.div>
+            <div className="w-full max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.7 }}
+              >
+                <ContractAddress address={CONTRACT_ADDRESS} />
+              </motion.div>
+            </div>
 
             {/* Social Links */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex items-center justify-center gap-4 w-full"
+              className="flex items-center justify-center gap-4 w-full mt-8"
             >
               <a
                 href={TWITTER_URL}

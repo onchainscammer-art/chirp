@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown, Twitter } from "lucide-react";
+import { Twitter } from "lucide-react";
 import { ContractAddress } from "@/components/ui/ContractAddress";
 
 const CONTRACT_ADDRESS = "4kZNuqg2hJLDs7DJwRGAeWmZGL1aHhG1dngwqugwpump";
@@ -91,23 +91,6 @@ export function HeroSection() {
             </a>
           </motion.div>
         </div>
-
-        {/* Scroll indicator - positioned at bottom with safe spacing */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="flex flex-col items-center gap-2"
-          >
-            <span className="text-sm text-chirp-text-tertiary">Scroll to discover</span>
-            <ChevronDown className="w-6 h-6 text-chirp-amber" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );

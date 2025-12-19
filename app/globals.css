@@ -1,26 +1,318 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* CHIRP color palette - Amber/Yellow theme (smoke detector aesthetic) */
+  --black: #000000;
+  --panel-bg: #0a0a0a;
+  --card-bg: #1a1a1a;
+  --amber: #fbbf24;           /* Primary accent */
+  --yellow: #fcd34d;          /* Secondary accent */
+  --orange: #fb923c;          /* Tertiary accent */
+  --amber-glow: rgba(251, 191, 36, 0.3);
+  --amber-glow-strong: rgba(251, 191, 36, 0.5);
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-tertiary: #737373;
+  --border: rgba(251, 191, 36, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+
+  --background: #0a0a0a;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+
+  /* Custom CHIRP colors */
+  --color-chirp-black: var(--black);
+  --color-chirp-panel: var(--panel-bg);
+  --color-chirp-card: var(--card-bg);
+  --color-chirp-amber: var(--amber);
+  --color-chirp-yellow: var(--yellow);
+  --color-chirp-orange: var(--orange);
+  --color-chirp-text-primary: var(--text-primary);
+  --color-chirp-text-secondary: var(--text-secondary);
+  --color-chirp-text-tertiary: var(--text-tertiary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Proper spacing and line heights */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Tabular numbers for consistent alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+}
+
+/* Gradient text effects */
+.text-gradient-amber {
+  background: linear-gradient(135deg, var(--amber) 0%, var(--yellow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-gradient-amber-orange {
+  background: linear-gradient(135deg, var(--amber) 0%, var(--orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Glass morphism effects */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.glass-effect-strong {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.glass-card {
+  background: rgba(26, 26, 26, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Glow effects */
+.glow-amber {
+  box-shadow: 0 0 20px var(--amber-glow), 0 0 40px var(--amber-glow);
+}
+
+.glow-amber-strong {
+  box-shadow: 0 0 30px var(--amber-glow-strong), 0 0 60px var(--amber-glow-strong);
+}
+
+.glow-border-amber {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3),
+              inset 0 0 20px rgba(251, 191, 36, 0.05);
+}
+
+/* Animated grid background */
+.grid-background {
+  background-image:
+    linear-gradient(to right, rgba(251, 191, 36, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(251, 191, 36, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Hover card effect */
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px var(--amber-glow-strong);
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--amber-glow), 0 0 20px var(--amber-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--amber-glow-strong), 0 0 40px var(--amber-glow-strong), 0 0 60px var(--amber-glow-strong);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes chirp-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease-out;
+}
+
+.animate-chirp-bounce {
+  animation: chirp-bounce 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--amber) 0%, var(--orange) 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--yellow) 0%, var(--amber) 100%);
+}
+
+/* Selection highlighting */
+::selection {
+  background: var(--amber);
+  color: var(--black);
+}
+
+::-moz-selection {
+  background: var(--amber);
+  color: var(--black);
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid var(--border-subtle);
+  border-top-color: var(--amber);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button base styles */
+button {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* Focus states */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+/* Smooth image transitions */
+img {
+  transition: transform 0.3s ease;
+}
+
+/* Link styles */
+a {
+  color: var(--amber);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--yellow);
 }

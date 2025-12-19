@@ -18,7 +18,7 @@ export function HeroSection() {
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-chirp-orange/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 pb-24 sm:pb-32 flex flex-col items-center justify-center min-h-screen">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 pb-32 sm:pb-40 flex flex-col items-center justify-center min-h-screen">
         <div className="w-full flex flex-col items-center text-center gap-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

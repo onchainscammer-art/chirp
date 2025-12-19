@@ -19,12 +19,13 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 pb-32 sm:pb-40 flex flex-col items-center justify-center min-h-screen">
-        <div className="w-full flex flex-col items-center text-center gap-8">
+        <div className="w-full flex flex-col items-center text-center gap-12">
+          {/* Title and Tagline Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full flex flex-col items-center gap-6"
+            className="w-full flex flex-col items-center"
           >
             {/* Title */}
             <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold text-gradient-amber mb-3 sm:mb-6">
@@ -55,40 +56,39 @@ export function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-lg sm:text-xl md:text-2xl text-chirp-text-primary font-display mb-6 sm:mb-12 max-w-3xl mx-auto w-full"
+              className="text-lg sm:text-xl md:text-2xl text-chirp-text-primary font-display max-w-3xl mx-auto w-full"
             >
               Virtually Invisible. Unmistakably Present.
             </motion.p>
+          </motion.div>
 
-            {/* Contract Address */}
-            <div className="w-full max-w-4xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-              >
-                <ContractAddress address={CONTRACT_ADDRESS} />
-              </motion.div>
-            </div>
+          {/* Contract Address */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="w-full max-w-4xl mx-auto"
+          >
+            <ContractAddress address={CONTRACT_ADDRESS} />
+          </motion.div>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex items-center justify-center gap-4 w-full mt-8"
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex items-center justify-center gap-4 w-full"
+          >
+            <a
+              href={TWITTER_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-chirp-amber to-chirp-yellow hover:from-chirp-yellow hover:to-chirp-amber transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
+              style={{ color: '#000000' }}
             >
-              <a
-                href={TWITTER_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-chirp-amber to-chirp-yellow hover:from-chirp-yellow hover:to-chirp-amber transition-all duration-300 font-bold shadow-lg hover:shadow-xl hover:scale-105 active:scale-95"
-                style={{ color: '#000000' }}
-              >
-                <Twitter className="w-5 h-5" />
-                <span>Follow @chirp_sol</span>
-              </a>
-            </motion.div>
+              <Twitter className="w-5 h-5" />
+              <span>Follow @chirp_sol</span>
+            </a>
           </motion.div>
         </div>
 

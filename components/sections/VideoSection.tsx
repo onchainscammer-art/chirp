@@ -7,7 +7,7 @@ import { useVideoContext } from "@/lib/context/VideoContext";
 export function VideoSection() {
   const { setVideoLoading: setGlobalVideoLoading, setVideoPlaying: setGlobalVideoPlaying } = useVideoContext();
   const [videoError, setVideoError] = useState(false);
-  const [videoLoading, setVideoLoading] = useState(true);
+  const [videoLoading, setVideoLoading] = useState(false);
 
   useEffect(() => {
     setGlobalVideoLoading(videoLoading);

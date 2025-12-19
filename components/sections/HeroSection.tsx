@@ -15,7 +15,7 @@ export function HeroSection() {
 
       {/* Gradient orbs */}
       <div className="absolute top-20 left-10 w-96 h-96 bg-chirp-amber/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-chirp-orange/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-chirp-yellow/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 pb-32 sm:pb-40 flex flex-col items-center justify-center min-h-screen">

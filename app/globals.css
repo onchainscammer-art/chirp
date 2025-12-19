@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  /* CHIRP color palette - Amber/Yellow theme (smoke detector aesthetic) */
+  /* CHIRP color palette - Agarthan theme */
   --black: #000000;
   --panel-bg: #0a0a0a;
   --card-bg: #1a1a1a;
-  --amber: #fbbf24;           /* Primary accent */
-  --yellow: #fcd34d;          /* Secondary accent */
-  --orange: #fb923c;          /* Tertiary accent */
-  --amber-glow: rgba(251, 191, 36, 0.3);
-  --amber-glow-strong: rgba(251, 191, 36, 0.5);
+  --amber: #4A90E2;           /* Primary accent - Sky Blue */
+  --yellow: #7FBF7F;          /* Secondary accent - Spring Green */
+  --orange: #FFD700;          /* Tertiary accent - Golden Blonde */
+  --amber-glow: rgba(74, 144, 226, 0.3);
+  --amber-glow-strong: rgba(74, 144, 226, 0.5);
   --text-primary: #ffffff;
   --text-secondary: #a3a3a3;
   --text-tertiary: #737373;
-  --border: rgba(251, 191, 36, 0.1);
+  --border: rgba(74, 144, 226, 0.1);
   --border-subtle: rgba(255, 255, 255, 0.05);
 
   --background: #0a0a0a;
@@ -110,7 +110,7 @@ p {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(251, 191, 36, 0.2);
+  border: 1px solid rgba(74, 144, 226, 0.2);
 }
 
 .glass-card {
@@ -130,15 +130,15 @@ p {
 }
 
 .glow-border-amber {
-  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3),
-              inset 0 0 20px rgba(251, 191, 36, 0.05);
+  box-shadow: 0 0 20px rgba(74, 144, 226, 0.3),
+              inset 0 0 20px rgba(74, 144, 226, 0.05);
 }
 
 /* Animated grid background */
 .grid-background {
   background-image:
-    linear-gradient(to right, rgba(251, 191, 36, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(251, 191, 36, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(74, 144, 226, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(74, 144, 226, 0.05) 1px, transparent 1px);
   background-size: 50px 50px;
   animation: grid-move 20s linear infinite;
 }
@@ -246,12 +246,12 @@ p {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, var(--amber) 0%, var(--orange) 100%);
+  background: linear-gradient(180deg, var(--amber) 0%, var(--yellow) 100%);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, var(--yellow) 0%, var(--amber) 100%);
+  background: linear-gradient(180deg, var(--orange) 0%, var(--amber) 100%);
 }
 
 /* Selection highlighting */

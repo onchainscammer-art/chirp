@@ -13,18 +13,6 @@ export function VideoSection() {
     setGlobalVideoLoading(videoLoading);
   }, [videoLoading, setGlobalVideoLoading]);
 
-  // Set a timeout to handle cases where video never loads
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (videoLoading) {
-        setVideoError(true);
-        setVideoLoading(false);
-      }
-    }, 3000); // 3 second timeout
-
-    return () => clearTimeout(timeout);
-  }, [videoLoading]);
-
   const handlePlay = () => {
     setGlobalVideoPlaying(true);
   };
@@ -66,12 +54,21 @@ export function VideoSection() {
           {!videoError && (
             <video
               controls
-              preload="metadata"
-              onError={() => {
+              playsInline
+              preload="auto"
+              onError={(e) => {
+                console.error('Video error:', e);
                 setVideoError(true);
                 setVideoLoading(false);
               }}
-              onLoadedData={() => setVideoLoading(false)}
+              onLoadedMetadata={() => {
+                console.log('Video metadata loaded');
+                setVideoLoading(false);
+              }}
+              onCanPlay={() => {
+                console.log('Video can play');
+                setVideoLoading(false);
+              }}
               onPlay={handlePlay}
               onPause={handlePause}
               onEnded={handleEnded}
